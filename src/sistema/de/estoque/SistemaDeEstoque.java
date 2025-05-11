@@ -1,21 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package sistema.de.estoque;
 
-/**
- *
- * @author micka
- */
+package sistema.de.estoque;
+import java.util.Scanner;
+
 public class SistemaDeEstoque {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        //hrll
-        // TODO code application logic here
+     if (!Login.autenticar()) {
+            System.out.println("Acesso negado.");
+            return;
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+
+        do {
+            System.out.println("\n==== MENU ESTOQUE SUPERMERCADO ====");
+            System.out.println("1 - Cadastrar Produto");
+            System.out.println("2 - Listar Produtos");
+            System.out.println("3 - Atualizar Produto");
+            System.out.println("4 - Remover Produto");
+            System.out.println("5 - Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+            
+        } while (opcao <= 1 || opcao > 5);
+       
     }
-    
-}
+    }
+
+
